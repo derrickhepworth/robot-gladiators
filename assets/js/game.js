@@ -15,14 +15,22 @@ console.log(enemyName, enemyHealth, enemyAttack)
 var logStats = function(){
 console.log(playerName + '|', 'Attack: ' + playerAttack, 'Health: ' + playerHealth);
 console.log(enemyName + '|', 'Attack: ' + enemyAttack, 'Health: ' +enemyHealth);
-};
+ };
 
 // logStats();
 
 var fight = function() {
     // Alert users that they are starting the round
     window.alert("Welcome to Robot Gladiators!");
+
+    //player choice
+    var promptFight = window.prompt(' Would you like ot FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
+
+    console.log( playerName + ' will ' + promptFight + '.');    
   
+    // fight or skip conditional 
+    if (promptFight === "FIGHT" || promptFight === "fight" || promptFight === "Fight"){
+
     // player attack 
     //Subtract the value of `playerAttack` from the value of `enemyHealth` and use that result to update the value in the `enemyHealth` variable
     enemyHealth = enemyHealth - playerAttack;
@@ -57,7 +65,11 @@ var fight = function() {
     else {
         window.alert(playerName + ' still has ' + playerHealth + ' left.');
     }
-    
+} else if (promptFight === "SKIP" || promptFight === "skip" || promptFight === "Skip"){
+    window.alert(playerName + 'has chosen to skip the fight!');
+} else {
+    window.alert('You need to pick a valid option. Try again!');
+}
 
     //   logStats();
 
